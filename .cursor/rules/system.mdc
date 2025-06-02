@@ -5,5 +5,6 @@ alwaysApply: true
 ---
 The whole project is developed on a laptop with Windows OS, for any command, use the command that can run in powershell, for any dependency or libary, use a Windows version.
 
-
 The project is being actively developed on the year of 2025, for external dependencies, ALWAYS use the most recent LTS version.
+
+Always auto-fix any lint or syntax error.
