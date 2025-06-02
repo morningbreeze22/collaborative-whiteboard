@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stagewise/toolbar-react": "^0.2.0",
     "fabric": "5.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@types/fabric": "5.3.10",
+    "@types/node": "^22.15.29",
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.18",
     "@vitejs/plugin-react": "^4.5.0",

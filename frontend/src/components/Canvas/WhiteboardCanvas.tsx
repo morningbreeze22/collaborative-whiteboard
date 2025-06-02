@@ -6,6 +6,7 @@ interface WhiteboardCanvasProps {
   width: number;
   height: number;
   fabricCanvasRef?: React.MutableRefObject<fabric.Canvas | null>;
+  wrapperWidth: number;
 }
 
 // Utility function to make all objects on canvas non-selectable and non-interactive
@@ -26,7 +27,7 @@ const makeAllObjectsNonSelectable = (canvas: fabric.Canvas) => {
   canvas.renderAll();
 };
 
-const WhiteboardCanvas: React.FC<WhiteboardCanvasProps> = ({ width, height, fabricCanvasRef }) => {
+const WhiteboardCanvas: React.FC<WhiteboardCanvasProps> = ({ width, height, fabricCanvasRef, wrapperWidth }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const fabricRef = useRef<fabric.Canvas | null>(null);
@@ -211,8 +212,9 @@ const WhiteboardCanvas: React.FC<WhiteboardCanvasProps> = ({ width, height, fabr
   return (
     <div
       ref={containerRef}
-      className="bg-white border-2 border-blue-200 rounded-lg shadow-lg flex items-center justify-center w-full overflow-auto"
+      className="bg-white border-2 border-blue-200 rounded-lg shadow-lg flex items-center justify-center overflow-auto"
       style={{ 
+        width: wrapperWidth,
         boxSizing: 'border-box',
         minHeight: height + 50,
         padding: '20px'

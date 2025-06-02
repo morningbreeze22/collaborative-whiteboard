@@ -6,13 +6,17 @@ import type { fabric } from "fabric";
 
 interface ToolbarProps {
   getCanvas: () => fabric.Canvas | null;
+  toolbarWidth: number;
 }
 
-const Toolbar: React.FC<ToolbarProps> = ({ getCanvas }) => {
+const Toolbar: React.FC<ToolbarProps> = ({ getCanvas, toolbarWidth }) => {
   const { tool, setTool, undo, redo, clear } = useWhiteboardStore();
 
   return (
-    <div className="flex items-center gap-4 bg-white/80 px-6 py-3 rounded-xl shadow mb-2 w-full justify-center border border-gray-200">
+    <div
+      className="flex items-center gap-4 bg-white/80 px-6 py-3 rounded-xl shadow mb-2 justify-center border border-gray-200"
+      style={{ width: toolbarWidth }}
+    >
       <button
         className={`toolbar-btn ${tool === 'pen' ? 'bg-blue-100' : ''}`}
         title="Pen"
